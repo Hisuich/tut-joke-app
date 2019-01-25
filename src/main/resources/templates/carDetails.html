@@ -1,0 +1,39 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+   
+    <link rel="stylesheet" th:href="@{/css/main.css}"/>
+    
+    <title>Jokes</title>
+</head>
+<body>
+	<th:block th:include="header :: header"></th:block>
+
+	<div class="car-info">
+		<div 
+			th:text="${carInfo.model}" 
+			class="car-model">
+			Car Model
+		</div>
+		
+		<img 
+			th:src="@{/images/{model}{id}.png(model = ${carInfo.model}, id = ${carInfo.id})}"
+			class="car-image">
+		
+		<div
+			th:text="${carInfo.price}"
+			class="car-price">
+			Car Price
+		</div>	
+	</div>
+
+	<script
+ 	 src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+ 	 integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+  		crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</script>
+</body>
+</html>
